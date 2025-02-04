@@ -1,0 +1,280 @@
+/* 基本樣式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #eef2f3; /* 柔和背景 */
+    overflow-y: auto; /* 防止動畫超出視窗範圍 */
+}
+
+/* 漂浮錢幣效果 */
+.money-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 不影響點擊事件 */
+    z-index: -1;
+    overflow: hidden; /* 確保符號不超出視窗範圍 */
+}
+
+.money {
+    position: absolute;
+    font-size: 20px;
+    color: #FFD700; /* 金色錢幣 */
+    animation: float-money 5s linear infinite; /* 漂浮動畫 */
+    opacity: 0; /* 預設透明，進入視窗後逐漸顯示 */
+}
+
+/* 漂浮動畫 */
+@keyframes float-money {
+    0% {
+        transform: translateY(100vh) rotate(0deg); /* 從螢幕底部出現 */
+        opacity: 0;
+    }
+    10% {
+        opacity: 1; /* 逐漸顯示 */
+    }
+    100% {
+        transform: translateY(-10vh) rotate(360deg); /* 到螢幕頂部並旋轉 */
+        opacity: 0; /* 最後消失 */
+    }
+}
+
+/* 頁首樣式 */
+header {
+    background-image: url('ff2cd489.webp');
+    background-size: cover; /* 確保背景圖片覆蓋整個header區域 */
+    background-position: center; /* 使圖片居中顯示 */
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 添加陰影 */
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border: 2px solid white; /* 白色邊框 */
+    background-color: #6F4F1F; /* 咖啡色背景 */
+    border-radius: 5px; /* 圓角效果 */
+    transition: background-color 0.3s, color 0.3s; /* 漸變過渡 */
+}
+
+nav a:hover {
+    background-color: #4E3629; /* 滑鼠懸停時的背景顏色（較深的咖啡色） */
+    color: white; /* 滑鼠懸停時的文字顏色 */
+}
+
+.section1 {
+    display: flex; /* 啟用 Flexbox */
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+    height: 500px;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(33, 15, 7, 0.1);
+    text-align: center;
+    background-image: url("img1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section1 p{
+    color: #1c0e03;
+}
+
+section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.section4 {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.section4 img {
+    border-radius: 200px;
+    max-width: 100%;
+    height: auto;
+}
+
+.section4 div {
+    width: 30%;
+    text-align: center;
+    color: rgb(27, 16, 1);
+    margin: 10px;
+}
+
+.section4 p {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.footer {
+    background-color: rgb(31, 18, 1);
+    color: rgb(241, 225, 205);
+    width: 1000px;
+    height: max-content;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+/* 表單樣式 */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FFB84D; /* 淺黃色 */
+    padding: 12px 40px;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 1px 0px #000;
+
+    -webkit-box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    -moz-box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+
+    -webkit-border-radius: 25px; /* 圓形邊框 */
+    -moz-border-radius: 25px;
+    border-radius: 25px; /* 更大的圓角使按鈕更圓潤 */
+
+    transition: all 0.3s ease; /* 讓所有屬性變化有過渡效果 */
+}
+
+button:active {
+    top: 10px;
+    background-color: #F78900; /* 當按下按鈕時，顏色變深 */
+
+    -webkit-box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+    -moz-box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+    box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+}
+
+button:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    padding: 4px;
+    position: absolute;
+    bottom: -10px;
+    left: -4px;
+    z-index: -1;
+    background-color: #2B1800;
+    border-radius: 25px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+ul li:last-child {
+    margin-bottom: 0;
+}
+
+#total-summary,
+#settle-summary {
+    font-size: 1.2em;
+}
+
+#total-summary p,
+#settle-summary p {
+    margin: 10px 0;
+}
+
+#settle-summary {
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+section#add-expense {
+    padding-top: 0;
+}
+
+section#user-management {
+    margin-top: 40px;
+}
+
+#user-management select {
+    font-size: 1em;
+    padding: 10px;
+}
+
+
+
